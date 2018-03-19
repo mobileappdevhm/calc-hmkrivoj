@@ -1,4 +1,3 @@
-language: android
 os:
   - linux
 sudo: false
@@ -17,4 +16,4 @@ script:
   - ./flutter/bin/flutter test
 cache:
   directories:
-- $HOME/.pub-cache
+  - $HOME/.pub-cache
