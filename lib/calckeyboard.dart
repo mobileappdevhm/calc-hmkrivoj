@@ -66,9 +66,9 @@ class CalcKeyboard extends StatelessWidget {
 
 class CalcButton extends StatelessWidget {
 
-  final _onPressed;
-  final _label;
-  final _style;
+  final VoidCallback _onPressed;
+  final String _label;
+  final TextStyle _style;
 
   CalcButton(this._onPressed, this._style, this._label);
 
