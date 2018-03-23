@@ -1,8 +1,4 @@
-# calculator
+# calculator [![Build Status](https://travis-ci.org/mobileappdevhm/calc-hmkrivoj.svg?branch=master)](https://travis-ci.org/mobileappdevhm/calc-hmkrivoj)
 
 A calculator programmed in flutter.
 
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
