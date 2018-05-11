@@ -16,11 +16,20 @@ language: generic
 jobs:
   include:
     - stage: test
+      language: generic
       script:
         - $(../flutter/bin/cache/dart-sdk/bin/dartfmt -n lib)
         - ../flutter/bin/flutter analyze
         - ../flutter/bin/flutter test
     - stage: deploy
+      language: android
+      android:
+        # The BuildTools version used by your project
+        - build-tools-28.0.2
+        # The SDK version used to compile your project
+        - android-27
+        # Sys image for eventual virtual devices
+        - sys-img-armeabi-v7a-android-26
       script: ../flutter/bin/flutter -v build apk
 cache:
   directories:
