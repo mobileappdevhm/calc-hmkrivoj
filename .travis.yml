@@ -10,7 +10,7 @@ addons:
       - lib32stdc++6
       - fonts-droid
 before_script:
-  - git clone https://github.com/flutter/flutter.git -o ../flutter -b beta --depth 1
+  - git clone https://github.com/flutter/flutter.git ../flutter -b beta --depth 1
   - ../flutter/bin/flutter doctor
 language: generic
 script:
