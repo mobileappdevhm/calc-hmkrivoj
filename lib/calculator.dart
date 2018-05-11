@@ -8,17 +8,19 @@ class Calculator extends StatefulWidget {
   _CalculatorState createState() => new _CalculatorState();
 }
 
-class _CalculatorState extends State<Calculator> implements CalcKeyboardListener {
-
+class _CalculatorState extends State<Calculator>
+    implements CalcKeyboardListener {
   var _input = '0';
   var _preview = '0';
 
   @override
   Widget build(BuildContext context) {
-    return new Column(children: <Widget>[
-      new CalcDisplay(_input, _preview),
-      new CalcKeyboard(this)
-    ],);
+    return new Column(
+      children: <Widget>[
+        new CalcDisplay(_input, _preview),
+        new CalcKeyboard(this)
+      ],
+    );
   }
 
   @override
@@ -45,8 +47,10 @@ class _CalculatorState extends State<Calculator> implements CalcKeyboardListener
   @override
   void remove() {
     setState(() {
-      if (_input.length <= 1) _input = '0';
-      else _input = _input.substring(0, _input.length - 1);
+      if (_input.length <= 1)
+        _input = '0';
+      else
+        _input = _input.substring(0, _input.length - 1);
       _updatePreview();
     });
   }
