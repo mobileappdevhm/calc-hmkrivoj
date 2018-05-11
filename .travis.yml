@@ -15,11 +15,11 @@ before_script:
 language: generic
 jobs:
   include:
-    - stage: Lint
-      script:
-        - ../flutter/bin/flutter analyze
-        - ../flutter/bin/cache/dart-sdk/bin/dartfmt -n lib
-    - stage: Test
+    - stage: dartfmt (Checkstyle)
+      script: ../flutter/bin/cache/dart-sdk/bin/dartfmt -n lib
+    - stage: flutter anaylze
+      script: ../flutter/bin/flutter analyze
+    - stage: flutter test
       script: ../flutter/bin/flutter test
 cache:
   directories:
