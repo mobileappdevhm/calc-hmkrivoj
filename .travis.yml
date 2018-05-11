@@ -13,10 +13,14 @@ before_script:
   - git clone https://github.com/flutter/flutter.git ../flutter -b beta --depth 1
   - ../flutter/bin/flutter doctor
 language: generic
-script:
-  - ../flutter/bin/flutter analyze
-  - ../flutter/bin/cache/dart-sdk/bin/dartfmt -n
-  - ../flutter/bin/flutter test
+jobs:
+  include:
+    - stage: Lint
+      script:
+        - ../flutter/bin/flutter analyze
+        - ../flutter/bin/cache/dart-sdk/bin/dartfmt -n
+    - stage: Test
+      script: ../flutter/bin/flutter test
 cache:
   directories:
   - $HOME/.pub-cache

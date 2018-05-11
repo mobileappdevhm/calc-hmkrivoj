@@ -4,7 +4,6 @@ import 'calculator.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -12,9 +11,6 @@ class MyApp extends StatelessWidget {
         theme: new ThemeData(
           primarySwatch: Colors.red,
         ),
-        home: new Scaffold(
-            body: new Calculator()
-        )
-    );
+        home: new Scaffold(body: new Calculator()));
   }
 }
