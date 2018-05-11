@@ -1,3 +1,4 @@
+language: generic
 os:
   - linux
 sudo: false
@@ -9,18 +10,19 @@ addons:
     packages:
       - lib32stdc++6
       - fonts-droid
-before_script:
-  - git clone https://github.com/flutter/flutter.git ../flutter -b beta --depth 1
-  - ../flutter/bin/flutter doctor
-language: generic
 jobs:
   include:
-    - stage: dartfmt (Checkstyle)
+    - stage: prepare cache
+      script:
+        - git clone https://github.com/flutter/flutter.git $HOME/flutter -b beta --depth 1
+        - $HOME/flutter/bin/flutter doctor
+    - stage: test
       script: ../flutter/bin/cache/dart-sdk/bin/dartfmt -n lib
-    - stage: flutter anaylze
+    - stage: test
       script: ../flutter/bin/flutter analyze
-    - stage: flutter test
+    - stage: test
       script: ../flutter/bin/flutter test
 cache:
   directories:
   - $HOME/.pub-cache
+  - $HOME/flutter
