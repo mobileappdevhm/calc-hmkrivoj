@@ -13,27 +13,14 @@ class CalcDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Padding(
       padding: new EdgeInsets.only(top: 16.0),
-      child: new Column(
-        children: <Widget>[
-          new Align(
-            child: new SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: new Text(
-                _input,
-                style: _big,
-              ),
-            ),
-            alignment: Alignment.centerRight,
-          ),
-          new Align(
-            alignment: Alignment.centerRight,
-            child: new Text(
-              _preview,
-              style: _small,
-            ),
-          )
-        ],
-      ),
+      child: new Column(children: <Widget>[
+        new Align(child: new SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: new Text(_input, style: _big,),
+        ), alignment: Alignment.centerRight,),
+        new Align(alignment: Alignment.centerRight,
+          child: new Text(_preview, style: _small,),)
+      ],),
     );
   }
 }
