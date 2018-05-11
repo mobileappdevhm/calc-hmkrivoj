@@ -10,13 +10,13 @@ addons:
       - lib32stdc++6
       - fonts-droid
 before_script:
-  - git clone https://github.com/flutter/flutter.git -b beta --depth 1
-  - ./flutter/bin/flutter doctor
+  - git clone https://github.com/flutter/flutter.git -o ../flutter -b beta --depth 1
+  - ../flutter/bin/flutter doctor
 language: android
 script:
-  - ./flutter/bin/flutter analyze
-  - ./flutter/bin/cache/dart-sdk/bin/dartfmt -n
-  - ./flutter/bin/flutter test
+  - ../flutter/bin/flutter analyze
+  - ../flutter/bin/cache/dart-sdk/bin/dartfmt -n
+  - ../flutter/bin/flutter test
 cache:
   directories:
   - $HOME/.pub-cache
