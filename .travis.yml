@@ -12,7 +12,7 @@ addons:
 before_script:
   - git clone https://github.com/flutter/flutter.git -o ../flutter -b beta --depth 1
   - ../flutter/bin/flutter doctor
-language: android
+language: generic
 script:
   - ../flutter/bin/flutter analyze
   - ../flutter/bin/cache/dart-sdk/bin/dartfmt -n
