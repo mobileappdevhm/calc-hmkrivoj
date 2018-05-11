@@ -17,9 +17,12 @@ jobs:
   include:
     - stage: test
       script:
-      - $(../flutter/bin/cache/dart-sdk/bin/dartfmt -n lib)
-      - ../flutter/bin/flutter analyze
-      - ../flutter/bin/flutter test
+        - $(../flutter/bin/cache/dart-sdk/bin/dartfmt -n lib)
+        - ../flutter/bin/flutter analyze
+        - ../flutter/bin/flutter test
+    - stage: deploy
+      script: ../flutter/bin/flutter -v build apk
 cache:
   directories:
   - $HOME/.pub-cache
+
