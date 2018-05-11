@@ -1,9 +1,4 @@
 language: dart
-dart:
-  - stable
-dart_task:
-  - dartanalyzer: --fatal-warnings lib
-  - dartfmt
 os:
   - linux
 sudo: false
@@ -18,6 +13,11 @@ addons:
 before_script:
   - git clone https://github.com/flutter/flutter.git -b beta --depth 1
   - ./flutter/bin/flutter doctor
+dart:
+  - stable
+dart_task:
+  - dartanalyzer: --fatal-warnings lib
+  - dartfmt
 script:
   - ./flutter/bin/flutter test
 cache:
