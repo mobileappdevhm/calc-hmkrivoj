@@ -17,7 +17,7 @@ jobs:
   include:
     - stage: test
       script:
-      - ../flutter/bin/cache/dart-sdk/bin/dartfmt -n lib | grep -Fxq ""
+      - $(../flutter/bin/cache/dart-sdk/bin/dartfmt -n lib)
       - ../flutter/bin/flutter analyze
       - ../flutter/bin/flutter test
 cache:
