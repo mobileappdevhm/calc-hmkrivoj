@@ -17,11 +17,11 @@ jobs:
         - git clone https://github.com/flutter/flutter.git $HOME/flutter -b beta --depth 1
         - $HOME/flutter/bin/flutter doctor
     - stage: test
-      script: ../flutter/bin/cache/dart-sdk/bin/dartfmt -n lib
+      script: $HOME/flutter/bin/cache/dart-sdk/bin/dartfmt -n lib
     - stage: test
-      script: ../flutter/bin/flutter analyze
+      script: $HOME/flutter/flutter/bin/flutter analyze
     - stage: test
-      script: ../flutter/bin/flutter test
+      script: $HOME/flutter/flutter/bin/flutter test
 cache:
   directories:
   - $HOME/.pub-cache
