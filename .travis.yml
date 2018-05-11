@@ -12,14 +12,10 @@ addons:
 before_script:
   - git clone https://github.com/flutter/flutter.git -b beta --depth 1
   - ./flutter/bin/flutter doctor
-language: dart
-dart:
-  - stable
-dart_task:
-  - dartanalyzer: --fatal-warnings lib
-  - dartfmt
+language: android
 script:
   - ./flutter/bin/flutter analyze
+  - ./flutter/bin/cache/dart-sdk/bin/dartfmt -n
   - ./flutter/bin/flutter test
 cache:
   directories:
